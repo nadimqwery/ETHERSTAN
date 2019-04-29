@@ -1,0 +1,53 @@
+<div class="container">
+    <hr class="my-5">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <section class="form-simple">
+
+
+                <mdb-card>
+
+
+                    <mdb-card-body class="mx-4 mt-4">
+
+                        <!--Body-->
+                        <form [formGroup]="loginForm">
+
+                            <div class="md-form">
+                                <i class="fa fa-envelope prefix grey-text"></i>
+                                <input type="text" id="loginFormEmail" class="form-control" formControlName="loginFormEmail" mdbInputDirective>
+                                <label for="loginFormEmail">Your email</label>
+                            </div>
+
+                            <div class="md-form pb-1">
+                                <i class="fa fa-lock prefix grey-text"></i>
+                                <input type="password" id="loginFormPassword" class="form-control" formControlName="loginFormPassword" mdbInputDirective>
+                                <label for="loginFormPassword">Your password</label>
+                                <p class="font-small grey-text d-flex justify-content-end">Forgot
+                                    <a type="button" (click)="resetPassword()" class="dark-grey-text font-weight-bold ml-1"> Password?</a>
+                                </p>
+                            </div>
+
+
+                            <div class="text-center mb-2">
+                                <button default (click)="login()" type="submit" mdbBtn class="btn btn-outline-deep-purple" mdbWavesEffect mdbWavesEffect> <i class="fas fa-user"></i> Log in</button>
+
+                            </div>
+                            <p class="font-small grey-text d-flex justify-content-center">Don't have an account?
+                                <a routerLink="/signup" class="dark-grey-text font-weight-bold ml-1" click> Sign up</a>
+                            </p>
+                        </form>
+
+                    </mdb-card-body>
+
+                </mdb-card>
+
+
+            </section>
+        </div>
+    </div>
+
+    <hr class="my-5">
+
+
+</div>

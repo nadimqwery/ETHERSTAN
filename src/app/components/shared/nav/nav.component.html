@@ -1,0 +1,83 @@
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark  deep-purple " [containerInside]="false">
+
+    <!-- Navbar brand -->
+    <mdb-navbar-brand class="float-left">
+        <a class="navbar-brand" routerLink="/" routerLinkActive="active"><sup><i class="fas fa-certificate"></i></sup> Etherstan</a>
+
+    </mdb-navbar-brand>
+    <div class="collapse navbar-collapse" id="basicExampleNav">
+
+
+        <!-- Collapsible content -->
+        <links>
+
+            <!-- Links -->
+            <ul class="navbar-nav mr-auto">
+                <!-- <li class="nav-item waves-light white-text d-flex flex-column justify-content-center" mdbWavesEffect>
+            <a (click)="back()">
+              <mdb-icon icon="fa-chevron-circle-left" size="lg" class="mr-2"></mdb-icon>Go Back
+            </a>
+    
+          </li> -->
+                <li class="nav-item" routerLinkActive="active">
+                    <a class="nav-link waves-light" mdbWavesEffect routerLink="/home">
+                        <mdb-icon fas icon="home"></mdb-icon>
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav ml-auto  ">
+                <li *ngIf="!authService.isLoggedIn" class="nav-item" routerLinkActive="active">
+                    <a class="nav-link waves-light" mdbWavesEffect routerLink="/login">
+                        <mdb-icon fas icon="user"></mdb-icon>
+                    </a>
+
+                </li>
+
+                <li *ngIf="authService.isLoggedIn" class="nav-item dropdown" dropdown routerLinkActive="active">
+                    <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+                        <i class="fas fa-user-check"></i> {{authService.user.email}}
+
+                        <!-- <span class="caret"></span> -->
+                    </a>
+                    <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+                        <a mdbRippleRadius type="button" (click)="authService.logout()" class="dropdown-item waves-light btn-sm" mdbWavesEffect>logout</a>
+
+                    </div>
+                </li>
+
+
+                <!-- <li class="nav-item dropdown" dropdown>
+                <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+
+                    <small><i class="fa fa-user prefix"   aria-hidden="true" white-text></i> {{authService.user.email}}
+                    <span class="caret"></span></small> 
+                    {{authService.user.email}}
+                </a>
+                <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+                    <a type="button" class="dropdown-item waves-light" mdbWavesEffect (click)="authService.logout()">Logout</a>
+
+                </div>
+            </li>
+
+
+             <li *ngIf="authService.isLoggedIn" class="nav-item">
+
+                <a class="nav-link"><small><i class="fa fa-user prefix"  aria-hidden="true" white-text></i> {{authService.user.email}}</small></a>
+            </li>  -->
+            </ul>
+
+
+        </links>
+        <div>
+            <form class="form-inline waves-light" mdbWavesEffect>
+                <div class="md-form mt-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Your Email" aria-label="email">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Your Password" aria-label="password">
+                    <button mdbBtn color="white" outline="true" size="sm" class="my-0 waves-light" type="submit" mdbWavesEffect>Login</button>
+                </div>
+            </form>
+        </div>
+        <!-- Collapsible content -->
+    </div>
+</mdb-navbar>
